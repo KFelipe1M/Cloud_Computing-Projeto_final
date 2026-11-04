@@ -1,0 +1,8 @@
+description: Banco de dados MariaDB
+config:
+  limits.memory: 1GiB
+  cloud-init.user-data: | 
+    #cloud-config
+     package_update: true
+     packages:
+       - mariadb-server
