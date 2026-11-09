@@ -3,7 +3,7 @@ config:
  limits.cpu: "1"
  limits.memory: 512MiB
 devices:
- eth0s:
+ eth0:
    name: eth0
    network: net-prod
    type: nic
