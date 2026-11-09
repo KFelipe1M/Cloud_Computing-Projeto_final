@@ -1,8 +1,8 @@
-description: Proxy reverso
+description: Proxy reverso Nginx
 config:
   cloud-init.user-data: |
-   #cloud-config
-   package_update: true
-   packages:
-     - nginx
-     - openssl
+    #cloud-config
+    package_update: true
+    packages:
+      - nginx
+      - openssl
