@@ -1,0 +1,124 @@
+lxc config show app --expanded --project final-equipe00
+architecture: x86_64
+config:
+  cloud-init.user-data: |
+    #cloud-config
+    package_update: true
+    packages:
+      - libapache2-mod-php
+      - php
+      - php-mysql
+      - php-gd
+      - php-curl
+      - php-mbstring
+      - php-xml
+      - php-zip
+      - php-intl
+      - php-bcmath
+      - php-gmp
+      - bzip2
+      - curl
+      - sudo
+  image.architecture: amd64
+  image.description: ubuntu 24.04 LTS (release)
+  image.label: release
+  image.os: ubuntu
+  image.release: noble
+  image.serial: "20261017"
+  image.type: squashfs
+  image.version: "24.04"
+  limits.cpu: "1"
+  limits.memory: 1GiB
+  volatile.base_image: 12a0de07e1683f41b169af0612897eae462efdeb84322281e91724c97e32fe0d
+  volatile.cloud-init.instance-id: ef31b70b-bf1d-4d91-9ca4-d62445671fdf
+  volatile.eth0s.host_name: veth9a699f6f
+  volatile.eth0s.hwaddr: 00:16:3e:ee:2b:0a
+  volatile.idmap.base: "0"
+  volatile.idmap.current: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.idmap.next: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.last_state.idmap: '[]'
+  volatile.last_state.power: RUNNING
+  volatile.uuid: 2e36eaab-162e-4988-81a4-d7fa9eb71223
+  volatile.uuid.generation: 2e36eaab-162e-4988-81a4-d7fa9eb71223
+devices:
+  config:
+    path: /var/www/nextcloud/config
+    pool: pool-final
+    source: vol-config
+    type: disk
+  dados:
+    path: /srv/nextcloud-data
+    pool: pool-final
+    source: vol-dados
+    type: disk
+  eth0s:
+    ipv4.address: 10.10.10.11
+    name: eth0
+    network: net-prod
+    type: nic
+  root:
+    path: /
+    pool: pool-final
+    type: disk
+ephemeral: false
+profiles:
+- perfil-base
+- perfil-app
+stateful: false
+description: ""
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+lxc config show db --expanded --project final-equipe00
+architecture: x86_64
+config:
+  cloud-init.user-data: |
+    #cloud-config
+     package_update: true
+     packages:
+       - mariadb-server
+  image.architecture: amd64
+  image.description: ubuntu 24.04 LTS (release)
+  image.label: release
+  image.os: ubuntu
+  image.release: noble
+  image.serial: "20261017"
+  image.type: squashfs
+  image.version: "24.04"
+  limits.cpu: "1"
+  limits.memory: 1GiB
+  snapshots.expiry: 7d
+  snapshots.schedule: '@daily'
+  volatile.base_image: 12a0de07e1683f41b169af0612897eae462efdeb84322281e91724c97e32fe0d
+  volatile.cloud-init.instance-id: abe62c1d-08a8-4293-8b14-adbc47ec47aa
+  volatile.eth0s.host_name: veth926d41b2
+  volatile.eth0s.hwaddr: 00:16:3e:34:62:f3
+  volatile.idmap.base: "0"
+  volatile.idmap.current: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.idmap.next: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.last_state.idmap: '[]'
+  volatile.last_state.power: RUNNING
+  volatile.uuid: 21057ad2-be43-4552-827d-0b93c1682d55
+  volatile.uuid.generation: 21057ad2-be43-4552-827d-0b93c1682d55
+devices:
+  dados:
+    path: /var/lib/mysql
+    pool: pool-final
+    source: vol-db
+    type: disk
+  eth0s:
+    ipv4.address: 10.10.10.12
+    name: eth0
+    network: net-prod
+    type: nic
+  root:
+    path: /
+    pool: pool-final
+    type: disk
+ephemeral: false
+profiles:
+- perfil-base
+- perfil-db
+stateful: false
+description: ""
+

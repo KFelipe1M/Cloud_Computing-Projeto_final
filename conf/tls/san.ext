@@ -1,0 +1,4 @@
+subjectAltName=DNS:servico.lab,IP:10.10.10.12
+basicConstraints=critical,CA:FALSE
+keyUsage=critical,digitalSignature,keyEncipherment
+extendedKeyUsage=serverAuth
