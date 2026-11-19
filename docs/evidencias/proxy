@@ -1,0 +1,48 @@
+architecture: x86_64
+config:
+  image.architecture: amd64
+  image.description: ubuntu 24.04 LTS (release)
+  image.label: release
+  image.os: ubuntu
+  image.release: noble
+  image.serial: "20261017"
+  image.type: squashfs
+  image.version: "24.04"
+  limits.cpu: "1"
+  limits.memory: 512MiB
+  volatile.base_image: 12a0de07e1683f41b169af0612897eae462efdeb84322281e91724c97e32fe0d
+  volatile.cloud-init.instance-id: d27842fe-6859-4ecf-afff-07265958723d
+  volatile.eth0s.host_name: veth5f606401
+  volatile.eth0s.hwaddr: 00:16:3e:17:49:c6
+  volatile.idmap.base: "0"
+  volatile.idmap.current: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.idmap.next: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.last_state.idmap: '[]'
+  volatile.last_state.power: RUNNING
+  volatile.uuid: 02d040a0-4dc1-48f2-8b25-1cef8a7fb8d8
+  volatile.uuid.generation: 02d040a0-4dc1-48f2-8b25-1cef8a7fb8d8
+devices:
+  eth0s:
+    ipv4.address: 10.10.10.10
+    name: eth0
+    network: net-prod
+    type: nic
+  porta-http:
+    connect: tcp:127.0.0.1:80
+    listen: tcp:0.0.0.0:8081
+    type: proxy
+  porta-https:
+    connect: tcp:127.0.0.1:443
+    listen: tcp:0.0.0.0:8444
+    type: proxy
+  root:
+    path: /
+    pool: pool-final
+    type: disk
+ephemeral: false
+profiles:
+- perfil-base
+- perfil-proxy
+stateful: false
+description: ""
+

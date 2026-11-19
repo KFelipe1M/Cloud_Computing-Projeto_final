@@ -1,0 +1,140 @@
+architecture: x86_64
+config:
+  image.architecture: amd64
+  image.description: ubuntu 24.04 LTS (release)
+  image.label: release
+  image.os: ubuntu
+  image.release: noble
+  image.serial: "20261017"
+  image.type: squashfs
+  image.version: "24.04"
+  limits.cpu: "1"
+  limits.memory: 512MiB
+  volatile.base_image: 12a0de07e1683f41b169af0612897eae462efdeb84322281e91724c97e32fe0d
+  volatile.cloud-init.instance-id: d27842fe-6859-4ecf-afff-07265958723d
+  volatile.eth0s.host_name: veth5f606401
+  volatile.eth0s.hwaddr: 00:16:3e:17:49:c6
+  volatile.idmap.base: "0"
+  volatile.idmap.current: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.idmap.next: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.last_state.idmap: '[]'
+  volatile.last_state.power: RUNNING
+  volatile.uuid: 02d040a0-4dc1-48f2-8b25-1cef8a7fb8d8
+  volatile.uuid.generation: 02d040a0-4dc1-48f2-8b25-1cef8a7fb8d8
+devices:
+  eth0s:
+    ipv4.address: 10.10.10.10
+    name: eth0
+    network: net-prod
+    type: nic
+  porta-http:
+    connect: tcp:127.0.0.1:80
+    listen: tcp:0.0.0.0:8081
+    type: proxy
+  porta-https:
+    connect: tcp:127.0.0.1:443
+    listen: tcp:0.0.0.0:8444
+    type: proxy
+  root:
+    path: /
+    pool: pool-final
+    type: disk
+ephemeral: false
+profiles:
+- perfil-base
+- perfil-proxy
+stateful: false
+description: ""
+
+╭─ubuntuuser on ubuntu-faculdade in ~/Desktop 
+╰─❯  lxc config show app --expanded project final-equipe00
+Description:
+  Show instance or server configurations
+
+Usage:
+  lxc config show [<remote>:][<instance>[/<snapshot>]] [flags]
+
+Flags:
+  -e, --expanded   Show the expanded configuration
+      --target     Cluster member name
+
+Global Flags:
+      --debug          Show all debug messages
+      --force-local    Force using the local unix socket
+  -h, --help           Print help
+      --project        Override the source project
+  -q, --quiet          Do not show progress information
+      --sub-commands   Use with help or --help to view sub-commands
+  -v, --verbose        Show all information messages
+      --version        Print version number
+Error: Invalid number of arguments
+
+╭─ubuntuuser on ubuntu-faculdade in ~/Desktop 
+╰─❯  lxc config show app --expanded --project final-equipe00
+architecture: x86_64
+config:
+  cloud-init.user-data: |
+    #cloud-config
+    package_update: true
+    packages:
+      - libapache2-mod-php
+      - php
+      - php-mysql
+      - php-gd
+      - php-curl
+      - php-mbstring
+      - php-xml
+      - php-zip
+      - php-intl
+      - php-bcmath
+      - php-gmp
+      - bzip2
+      - curl
+      - sudo
+  image.architecture: amd64
+  image.description: ubuntu 24.04 LTS (release)
+  image.label: release
+  image.os: ubuntu
+  image.release: noble
+  image.serial: "20261017"
+  image.type: squashfs
+  image.version: "24.04"
+  limits.cpu: "1"
+  limits.memory: 1GiB
+  volatile.base_image: 12a0de07e1683f41b169af0612897eae462efdeb84322281e91724c97e32fe0d
+  volatile.cloud-init.instance-id: ef31b70b-bf1d-4d91-9ca4-d62445671fdf
+  volatile.eth0s.host_name: veth9a699f6f
+  volatile.eth0s.hwaddr: 00:16:3e:ee:2b:0a
+  volatile.idmap.base: "0"
+  volatile.idmap.current: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.idmap.next: '[{"Isuid":true,"Isgid":false,"Hostid":1000000,"Nsid":0,"Maprange":1000000000},{"Isuid":false,"Isgid":true,"Hostid":1000000,"Nsid":0,"Maprange":1000000000}]'
+  volatile.last_state.idmap: '[]'
+  volatile.last_state.power: RUNNING
+  volatile.uuid: 2e36eaab-162e-4988-81a4-d7fa9eb71223
+  volatile.uuid.generation: 2e36eaab-162e-4988-81a4-d7fa9eb71223
+devices:
+  config:
+    path: /var/www/nextcloud/config
+    pool: pool-final
+    source: vol-config
+    type: disk
+  dados:
+    path: /srv/nextcloud-data
+    pool: pool-final
+    source: vol-dados
+    type: disk
+  eth0s:
+    ipv4.address: 10.10.10.11
+    name: eth0
+    network: net-prod
+    type: nic
+  root:
+    path: /
+    pool: pool-final
+    type: disk
+ephemeral: false
+profiles:
+- perfil-base
+- perfil-app
+stateful: false
+description: ""
