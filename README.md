@@ -4,17 +4,18 @@
 
 Este repositório contém os arquivos e materiais desenvolvidos para o Projeto Final da disciplina de **Computação em Nuvem (Cloud Computing)**.
 
+O Nextcloud é uma plataforma de armazenamento e colaboração em nuvem privada (Private Cloud), que permite disponibilizar arquivos, documentos e outros recursos por meio de uma infraestrutura própria.
+No contexto da disciplina de Cloud Computing, ele funciona como a aplicação principal de um ambiente de computação em nuvem, permitindo demonstrar como serviços podem ser hospedados, distribuídos, gerenciados e disponibilizados aos usuários por meio de uma infraestrutura virtualizada.
+Diferentemente de simplesmente utilizar um serviço como Google Drive ou OneDrive, a proposta do Nextcloud é permitir que a própria organização mantenha e administre sua infraestrutura de armazenamento
+
+
+## 🎓 Finalidade Acadêmica
+
 O projeto tem como finalidade reunir e organizar os recursos, configurações, documentações e scripts relacionados ao desenvolvimento da atividade acadêmica, utilizando o GitHub como ferramenta de versionamento e colaboração entre os integrantes da equipe.
 
 O projeto consiste na implementação de uma infraestrutura de Computação em Nuvem utilizando a plataforma LXD, com o objetivo de gerenciar contêineres, redes virtuais, armazenamento e serviços de forma organizada.
 A solução utiliza o Ubuntu 24.04 como imagem-base e prevê a execução de três serviços principais: Nginx, responsável pelo proxy reverso; Nextcloud, responsável pela aplicação; e MariaDB, utilizado como banco de dados.
 A infraestrutura foi planejada com dois ambientes, Produção (PROD) e Desenvolvimento (DEV), permitindo separar os serviços e facilitar a organização e os testes. Para isso, são utilizados recursos como redes independentes, perfis de configuração, instâncias e volumes persistentes.
-
-
-## 🎓 Finalidade Acadêmica
-
-Projeto desenvolvido como atividade acadêmica da disciplina de Computação em Nuvem, com o objetivo de aplicar os conhecimentos adquiridos durante o período letivo.
-
 
 ---
 
