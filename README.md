@@ -6,6 +6,13 @@ Este repositório contém os arquivos e materiais desenvolvidos para o Projeto F
 
 O projeto tem como finalidade reunir e organizar os recursos, configurações, documentações e scripts relacionados ao desenvolvimento da atividade acadêmica, utilizando o GitHub como ferramenta de versionamento e colaboração entre os integrantes da equipe.
 
+## 🎓 Finalidade Acadêmica
+
+Projeto desenvolvido como atividade acadêmica da disciplina de Computação em Nuvem, com o objetivo de aplicar os conhecimentos adquiridos durante o período letivo.
+
+
+---
+
 ## 📁 Estrutura do Repositório
 
 O repositório está organizado da seguinte forma:
@@ -232,12 +239,6 @@ parados:
 lxc stop app2 --project final-equipe00
 lxc stop test-dev --project final-equipe00
 ```
-
-## 🎓 Finalidade Acadêmica
-
-Projeto desenvolvido como atividade acadêmica da disciplina de Computação em Nuvem, com o objetivo de aplicar os conhecimentos adquiridos durante o período letivo.
-
----
 
 **Projeto Final – Cloud Computing**
 
