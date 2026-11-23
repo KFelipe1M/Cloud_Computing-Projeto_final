@@ -43,6 +43,8 @@ Cloud_Computing-Projeto_final/
 | Lucas Teobaldo Cruz | 01802436 |
 | Victor Ribeiro Barbosa de Menezes | 01791754 |
 | Pablo Henrique Ramos de Oliveira | 01837789 |
+| Henry Torres Batista | 01852068 |
+| Luiz Eduardo Lima Coimbra Vinhas | 01803321 |
 
 ## 🛠️ Tecnologias e Ferramentas
 -----------------------------------------------------------------------
